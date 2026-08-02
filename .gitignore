@@ -1,0 +1,14 @@
+# исходные "huge screenshot" панорамы — тяжёлые (десятки-сотни МБ),
+# сайт использует только уменьшенные копии из assets/images/
+HDeadEyes/
+IrlaniYT/
+KING_TW_69/
+MishvoD/
+Sevuk2281/
+Vovandiy/
+ivanbos/
+sigmakoshka007/
+huge_*.png
+
+# визуальный референс — не часть сайта
+www.minecraft.net_ru-ru.png

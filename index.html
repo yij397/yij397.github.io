@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft Server — архив построек</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Golos+Text:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="topbar__logo" href="#top">
+      <span class="topbar__logo-block" aria-hidden="true"></span>
+      MC SERVER
+    </a>
+    <nav class="topbar__nav">
+      <a href="#symbol">Символ</a>
+      <a href="#houses">Участники</a>
+      <a href="#hosting">Хостинг</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg" style="background-image:url('assets/images/statue.jpg')"></div>
+    <div class="hero__scrim"></div>
+    <div class="hero__content">
+      <p class="eyebrow eyebrow--gold">Архив • Воспоминания • Дружба</p>
+      <h1 class="hero__title">MINECRAFT<br>SERVER</h1>
+      <p class="hero__subtitle">Архив построек одной небольшой, но очень весёлой компании друзей.</p>
+      <a href="#houses" class="btn btn--primary">Смотреть участников</a>
+    </div>
+    <a href="#symbol" class="hero__scroll-cue" aria-label="Прокрутить вниз">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- SYMBOL -->
+  <section class="symbol" id="symbol">
+    <div class="symbol__inner">
+      <div class="symbol__media">
+        <button class="symbol__frame" type="button" data-images="assets/images/statue.jpg" data-alts="Статуя с мечом и яйцом дракона на постаменте посреди воды" aria-label="Открыть фото статуи поближе">
+          <img src="assets/images/statue.jpg" alt="Статуя с мечом и яйцом дракона на постаменте посреди воды">
+          <span class="symbol__glow" aria-hidden="true"></span>
+          <span class="house-card__zoom">Смотреть фото →</span>
+        </button>
+      </div>
+      <div class="symbol__text">
+        <p class="eyebrow eyebrow--purple">Символ сервера</p>
+        <h2 class="section-title">Статуя с яйцом дракона</h2>
+        <p class="symbol__desc">
+          Андезитовая фигура с мечом в одной руке и яйцом дракона в другой.
+          Яйцо дракона — артефакт, который можно получить лишь <strong>один раз за всё
+          существование сервера</strong>, в момент первой победы над драконом Края.
+        </p>
+        <p class="symbol__desc">
+          Мы решили, что такой момент заслуживает памятника — и поставили его
+          посреди воды, чтобы был виден издалека.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTICIPANTS -->
+  <section class="houses" id="houses">
+    <div class="houses__head">
+      <p class="eyebrow eyebrow--grass">Компания</p>
+      <h2 class="section-title">Участники сервера</h2>
+      <p class="houses__lead">Одиннадцать историй одной компании друзей. Нажми на фото, чтобы рассмотреть постройку поближе.</p>
+    </div>
+
+    <div class="house-grid">
+
+      <article class="house-card" data-images="assets/images/hdeadeyes-main.jpg,assets/images/hdeadeyes-thumb1.jpg,assets/images/hdeadeyes-thumb2.jpg" data-alts="Летающая база Максима с кроватью и факелами|Смотровая площадка на столбе над красным каньоном|Блочная вывеска с ником DeadEyes на траве" style="--tag-color:#f2b632">
+        <div class="house-card__media-col">
+          <button class="house-card__shot house-card__shot--main" data-index="0" aria-label="Открыть фото постройки Максима">
+            <img src="assets/images/hdeadeyes-main.jpg" alt="Летающая база Максима (HDeadEyes)" loading="lazy">
+            <span class="house-card__zoom">Смотреть фото →</span>
+          </button>
+          <div class="house-card__thumbs">
+            <button class="house-card__shot house-card__shot--thumb" data-index="1" aria-label="Ещё одно фото постройки Максима">
+              <img src="assets/images/hdeadeyes-thumb1.jpg" alt="Смотровая площадка над красным каньоном" loading="lazy">
+            </button>
+            <button class="house-card__shot house-card__shot--thumb" data-index="2" aria-label="Ещё одно фото постройки Максима">
+              <img src="assets/images/hdeadeyes-thumb2.jpg" alt="Блочная вывеска с ником DeadEyes" loading="lazy">
+            </button>
+          </div>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Максим</p>
+          <h3 class="house-card__name">HDeadEyes</h3>
+          <p class="house-card__text">С Максима всё и началось — именно вдвоём с ним мы когда-то запустили этот сервер, а уже потом постепенно позвали остальных, и то, что сейчас выглядит как целая компания, началось именно с этих двоих. Играть ему при этом было совсем не просто: тогда у него не было компьютера, и он заходил через специальный лаунчер прямо с телефона — с подключённой клавиатурой и мышкой. Неудобно, но он всё равно упрямо играл, воевал не только с мобами, но и с самой игрой — и честно заслужил место почёта на этом сервере.</p>
+        </div>
+      </article>
+
+      <article class="house-card" data-images="assets/images/irlaniyt-main.jpg,assets/images/irlaniyt-thumb1.jpg,assets/images/irlaniyt-thumb2.jpg" data-alts="Дом Серафима у фермы на берегу пруда|Жители-торговцы зачарованными книгами в подземном пункте|Складское помещение под домом" style="--tag-color:#6bbf3f">
+        <div class="house-card__media-col">
+          <button class="house-card__shot house-card__shot--main" data-index="0" aria-label="Открыть фото постройки Серафима">
+            <img src="assets/images/irlaniyt-main.jpg" alt="Дом Серафима (IrlaniYT)" loading="lazy">
+            <span class="house-card__zoom">Смотреть фото →</span>
+          </button>
+          <div class="house-card__thumbs">
+            <button class="house-card__shot house-card__shot--thumb" data-index="1" aria-label="Ещё одно фото постройки Серафима">
+              <img src="assets/images/irlaniyt-thumb1.jpg" alt="Торговцы зачарованными книгами" loading="lazy">
+            </button>
+            <button class="house-card__shot house-card__shot--thumb" data-index="2" aria-label="Ещё одно фото постройки Серафима">
+              <img src="assets/images/irlaniyt-thumb2.jpg" alt="Складское помещение под домом" loading="lazy">
+            </button>
+          </div>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Серафим</p>
+          <h3 class="house-card__name">IrlaniYT</h3>
+          <p class="house-card__text">Друг sigmakoshka007 — именно он когда-то привёл его на сервер, и уже здесь Серафим показал, что умеет строить по-настоящему красиво: один из самых эффектных домов на сервере — его рук дело. Под домом у него жил целый торговый пункт: жители продавали книгу на починку, и любой на сервере мог прийти и купить её — так держалась важная часть нашей экономики. А ещё у него была ферма пороха на криперах — специально разводил их, чтобы получать порох в промышленных масштабах.</p>
+        </div>
+      </article>
+
+      <article class="house-card" data-images="assets/images/ivanbos-main.jpg,assets/images/ivanbos-thumb1.jpg,assets/images/ivanbos-thumb2.jpg" data-alts="Особняк Вани с колоннами и башней в саванне|Коридор с картинами и фонарями внутри особняка|Кладовая с сундуками" style="--tag-color:#3ec9d6">
+        <div class="house-card__media-col">
+          <button class="house-card__shot house-card__shot--main" data-index="0" aria-label="Открыть фото постройки Вани">
+            <img src="assets/images/ivanbos-main.jpg" alt="Особняк Вани (ivanbos)" loading="lazy">
+            <span class="house-card__zoom">Смотреть фото →</span>
+          </button>
+          <div class="house-card__thumbs">
+            <button class="house-card__shot house-card__shot--thumb" data-index="1" aria-label="Ещё одно фото постройки Вани">
+              <img src="assets/images/ivanbos-thumb1.jpg" alt="Коридор с картинами внутри особняка" loading="lazy">
+            </button>
+            <button class="house-card__shot house-card__shot--thumb" data-index="2" aria-label="Ещё одно фото постройки Вани">
+              <img src="assets/images/ivanbos-thumb2.jpg" alt="Кладовая с сундуками" loading="lazy">
+            </button>
+          </div>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Ваня</p>
+          <h3 class="house-card__name">ivanbos</h3>
+          <p class="house-card__text">Ваня никогда не сидел сложа руки — закончив одну постройку, тут же принимался за следующую. За это время успел построить несколько домов: первый так и не достроил, второй просто жил в лавакасте, а третий получился настолько цельным и красивым, что именно он попал на этот сайт. И всё это — почти неизменно с самым высоким пингом на сервере, с которым он боролся едва ли не больше, чем с мобами.</p>
+        </div>
+      </article>
+
+      <article class="house-card" data-images="assets/images/mishvod-main.jpg,assets/images/mishvod-thumb1.jpg" data-alts="Сторожевая башня Вани на границе снежного биома|Тот же вид издалека, со снежными горами" style="--tag-color:#9fb8c9">
+        <div class="house-card__media-col">
+          <button class="house-card__shot house-card__shot--main" data-index="0" aria-label="Открыть фото постройки Вани (MishvoD)">
+            <img src="assets/images/mishvod-main.jpg" alt="Сторожевая башня Вани (MishvoD)" loading="lazy">
+            <span class="house-card__zoom">Смотреть фото →</span>
+          </button>
+          <div class="house-card__thumbs">
+            <button class="house-card__shot house-card__shot--thumb" data-index="1" aria-label="Ещё одно фото постройки Вани">
+              <img src="assets/images/mishvod-thumb1.jpg" alt="Башня издалека, со снежными горами" loading="lazy">
+            </button>
+          </div>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Ваня</p>
+          <h3 class="house-card__name">MishvoD</h3>
+          <p class="house-card__text">Дом построил по схематике, скачанной из интернета, — и получился самый красивый дом на сервере, пусть и не полностью придуманный с нуля. Ваня вообще любил инфраструктуру: проложил в аду целую магистраль, по которой можно было быстро добраться из одной точки в другую, и оформил портал в ад настолько красиво, что грех было им не пользоваться. Жил не на спавне, а за тысячи блоков от него, и, как правило, был самым богатым игроком сервера. Тот самый финальный дом, увы, не сохранился — сервер уже удалён, поэтому на фото его сторожевая башня, которую он построил ещё раньше.</p>
+        </div>
+      </article>
+
+      <article class="house-card" data-images="assets/images/sevuk2281-main.jpg,assets/images/sevuk2281-thumb1.jpg" data-alts="Скрытая дверь в горе — вход в дом Севы|Уютный подземный бункер со свечами и сундуками" style="--tag-color:#9b5de5">
+        <div class="house-card__media-col">
+          <button class="house-card__shot house-card__shot--main" data-index="0" aria-label="Открыть фото постройки Севы">
+            <img src="assets/images/sevuk2281-main.jpg" alt="Дом Севы в горе (Sevuk2281)" loading="lazy">
+            <span class="house-card__zoom">Смотреть фото →</span>
+          </button>
+          <div class="house-card__thumbs">
+            <button class="house-card__shot house-card__shot--thumb" data-index="1" aria-label="Ещё одно фото постройки Севы">
+              <img src="assets/images/sevuk2281-thumb1.jpg" alt="Уютный подземный бункер со свечами" loading="lazy">
+            </button>
+          </div>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Сева</p>
+          <h3 class="house-card__name">Sevuk2281</h3>
+          <p class="house-card__text">Сева был кладом — в буквальном смысле: постоянно пропадал в шахтах, добывая ресурсы, и в основном держался особняком, без остальной части сервера. Дом, который он в итоге построил, полностью спрятан в горе — снаружи только неприметная дверь, а внутри уютный бункер со свечами и сундуками. Очень похоже на его характер: всё самое интересное — не на виду.</p>
+        </div>
+      </article>
+
+      <article class="house-card" data-images="assets/images/vovandiy-main.jpg,assets/images/vovandiy-thumb1.jpg" data-alts="Дом Вовы с панорамными окнами у воды|Светлый интерьер дома изнутри" style="--tag-color:#e05a4e">
+        <div class="house-card__media-col">
+          <button class="house-card__shot house-card__shot--main" data-index="0" aria-label="Открыть фото постройки Вовы">
+            <img src="assets/images/vovandiy-main.jpg" alt="Дом Вовы (Vovandiy)" loading="lazy">
+            <span class="house-card__zoom">Смотреть фото →</span>
+          </button>
+          <div class="house-card__thumbs">
+            <button class="house-card__shot house-card__shot--thumb" data-index="1" aria-label="Ещё одно фото постройки Вовы">
+              <img src="assets/images/vovandiy-thumb1.jpg" alt="Светлый интерьер дома изнутри" loading="lazy">
+            </button>
+          </div>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Вова</p>
+          <h3 class="house-card__name">Vovandiy</h3>
+          <p class="house-card__text">Вова играл не так много, как остальные — но даже за то время, что провёл на сервере, успел построить аккуратный дом с панорамными окнами у воды. Иногда, чтобы оставить след, не обязательно быть на сервере каждый день.</p>
+        </div>
+      </article>
+
+      <article class="house-card" data-images="assets/images/king_tw_69-main.jpg,assets/images/king_tw_69-thumb1.jpg,assets/images/king_tw_69-thumb2.jpg" data-alts="Вход в дом Тимура с самодельным баннером|Спальня внутри дома|Кладовая с декоративными коврами" style="--tag-color:#f2b632">
+        <div class="house-card__media-col">
+          <button class="house-card__shot house-card__shot--main" data-index="0" aria-label="Открыть фото постройки Тимура">
+            <img src="assets/images/king_tw_69-main.jpg" alt="Дом Тимура (KING_TW_69)" loading="lazy">
+            <span class="house-card__zoom">Смотреть фото →</span>
+          </button>
+          <div class="house-card__thumbs">
+            <button class="house-card__shot house-card__shot--thumb" data-index="1" aria-label="Ещё одно фото постройки Тимура">
+              <img src="assets/images/king_tw_69-thumb1.jpg" alt="Спальня внутри дома" loading="lazy">
+            </button>
+            <button class="house-card__shot house-card__shot--thumb" data-index="2" aria-label="Ещё одно фото постройки Тимура">
+              <img src="assets/images/king_tw_69-thumb2.jpg" alt="Кладовая с декоративными коврами" loading="lazy">
+            </button>
+          </div>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Тимур</p>
+          <h3 class="house-card__name">KING_TW_69</h3>
+          <p class="house-card__text">Главный весельчак сервера — там, где играл Тимур, всем сразу становилось веселее. Успевал строить и по-настоящему смешные постройки, о содержании которых лучше умолчим, но поверьте — было весело. А ещё у него были огромные запасы обычных книг, которые я то и дело у него одалживал, — вроде бы он не был против. Поселился в горе чуть ниже Севы — если приглядеться на фото, сверху даже видна дверь его дома.</p>
+        </div>
+      </article>
+
+      <article class="house-card" data-images="assets/images/sigmakoshka007-main.jpg,assets/images/sigmakoshka007-thumb1.jpg,assets/images/sigmakoshka007-thumb2.jpg" data-alts="Каменный мегакомплекс Вани с мостом и маяком|Кладовая с подписанными сундуками|Ещё одна кладовая внутри постройки" style="--tag-color:#6bbf3f">
+        <div class="house-card__media-col">
+          <button class="house-card__shot house-card__shot--main" data-index="0" aria-label="Открыть фото постройки Вани (sigmakoshka007)">
+            <img src="assets/images/sigmakoshka007-main.jpg" alt="Каменный мегакомплекс Вани (sigmakoshka007)" loading="lazy">
+            <span class="house-card__zoom">Смотреть фото →</span>
+          </button>
+          <div class="house-card__thumbs">
+            <button class="house-card__shot house-card__shot--thumb" data-index="1" aria-label="Ещё одно фото постройки Вани">
+              <img src="assets/images/sigmakoshka007-thumb1.jpg" alt="Кладовая с подписанными сундуками" loading="lazy">
+            </button>
+            <button class="house-card__shot house-card__shot--thumb" data-index="2" aria-label="Ещё одно фото постройки Вани">
+              <img src="assets/images/sigmakoshka007-thumb2.jpg" alt="Ещё одна кладовая внутри постройки" loading="lazy">
+            </button>
+          </div>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Ваня</p>
+          <h3 class="house-card__name">sigmakoshka007</h3>
+          <p class="house-card__text">Именно он привёл на сервер Серафима — а сам наиграл здесь больше часов, чем кто-либо ещё. Проложил метро между жителями деревни у спавна: пусть в итоге оно не особо пригодилось, это лишь малая часть того, что он успел построить. В его доме есть портал в ад, который он специально сделал проходным двором, — туда заходили буквально все. Собственная постройка — самая масштабная на сервере, пусть и не самая разнообразная по блокам.</p>
+        </div>
+      </article>
+
+      <article class="house-card house-card--noimg house-card--compact" id="crew" style="--tag-color:#8a8a8a">
+        <div class="house-card__media-col house-card__media-col--icon">
+          <span class="house-card__big-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" fill="#3d3d3d"/><rect x="3" y="3" width="4" height="4" fill="#8a8a8a"/><rect x="9" y="9" width="4" height="4" fill="#8a8a8a"/><rect x="3" y="9" width="4" height="4" fill="#6b6b64"/><rect x="9" y="3" width="4" height="4" fill="#6b6b64"/></svg>
+          </span>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Это я</p>
+          <h3 class="house-card__name">yij398</h3>
+          <p class="house-card__text">Свой домик тоже был — маленький, показывать особо нечего. В основном я занимался модерацией и техническими вопросами сервера, чтобы у всех остальных было время и место для таких построек.</p>
+        </div>
+      </article>
+
+      <article class="house-card house-card--noimg house-card--compact" style="--tag-color:#c9a15a">
+        <div class="house-card__media-col house-card__media-col--icon">
+          <span class="house-card__big-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16"><rect x="2" y="6" width="12" height="7" fill="#8a5a2e"/><rect x="1" y="4" width="14" height="3" fill="#a56c37"/><rect x="6" y="1" width="4" height="4" fill="#c9c9c9"/><rect x="7" y="2" width="2" height="2" fill="#5f5f5f"/></svg>
+          </span>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Ярик</p>
+          <h3 class="house-card__name">Iyserg</h3>
+          <p class="house-card__text">Пытался построить дом целиком из верстаков — не успел его достроить и на этом сервере больше не играл. Зато когда я открыл следующий сервер с модом Create — одним из самых сложных модов — Ярик неожиданно застрял там надолго и даже построил себе дирижабль.</p>
+        </div>
+      </article>
+
+      <article class="house-card house-card--noimg house-card--compact" style="--tag-color:#6b6b64">
+        <div class="house-card__media-col house-card__media-col--icon">
+          <span class="house-card__big-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16"><rect x="3" y="2" width="10" height="12" fill="#5f5f5f"/><rect x="5" y="4" width="6" height="2" fill="#2e2e2e"/><rect x="5" y="8" width="6" height="2" fill="#2e2e2e"/></svg>
+          </span>
+        </div>
+        <div class="house-card__body">
+          <p class="house-card__nick">Саша</p>
+          <h3 class="house-card__name">Dmdbs15</h3>
+          <p class="house-card__text">Играл очень часто и увлечённо — постоянно что-то строил, потом ломал и строил заново, тоже заходил с телефона, как и Максим. Его постройки, к сожалению, пока не нашлись — но играл он всегда много и старательно, это мы точно помним.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- HOSTING -->
+  <section class="hosting" id="hosting">
+    <div class="hosting__head">
+      <p class="eyebrow eyebrow--red">Закулисье</p>
+      <h2 class="section-title">Как жил этот сервер</h2>
+    </div>
+    <div class="hosting__panel notched">
+      <p class="hosting__text">Сервер жил не на выделенном железе и не в облаке, а на самом обычном ноутбуке моего отца. Компьютер тогда был у нас в семье один на всех, так что держать его включённым круглые сутки я не мог — сервер поднимался, когда была возможность, и засыпал, когда ноутбук был нужен для других дел.</p>
+      <p class="hosting__text">Версия держалась на <strong>1.21.8</strong>, а вот список плагинов не был статичным ни дня: за всё время жизни сервера я то и дело докидывал новые, пробовал разное — что-то приживалось, что-то нет, и сервер понемногу менялся вместе с нами. С доступом извне помогал <strong>PlayIt</strong> — без преувеличения лучший сервис из тех, что я пробовал, чтобы дать друзьям возможность зайти на мой мир, не разбираясь в пробросе портов и настройках роутера.</p>
+      <p class="hosting__text">Слабым местом была именно мощность самого ноутбука — он никогда не был рассчитан на такую нагрузку. Это стало особенно заметно в тот день, когда мы поставили рекорд онлайна — десять человек одновременно — и сервер попросту лёг под этим весом.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Сервера уже нет, но дома, память и эта страница — остались.</p>
+  <p class="footer__small">Спасибо всем, кто играл.</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть">✕</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Предыдущее фото">‹</button>
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Следующее фото">›</button>
+  <div class="lightbox__stage">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+  <div class="lightbox__thumbs" id="lightboxThumbs"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

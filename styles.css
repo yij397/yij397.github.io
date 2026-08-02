@@ -1,0 +1,624 @@
+/* ==========================================================
+   MINECRAFT SERVER — archive landing
+   Aesthetic: dark grove / night-world GUI. Deep near-black
+   greens, stone-slot cards with notched corners, torch-gold
+   and dragon-egg-purple accents, chunky pixel display type.
+   ========================================================== */
+
+:root {
+  --bg: #0a0f09;
+  --bg-1: #10150f;
+  --panel: #161d13;
+  --panel-2: #1e2718;
+  --stone: #3c3c38;
+  --stone-light: #6b6b62;
+  --text: #eef2e6;
+  --text-dim: #a7b39c;
+  --text-faint: #6f7a67;
+
+  --grass: #6bbf3f;
+  --grass-dark: #3f7a26;
+  --gold: #f2b632;
+  --gold-dark: #a97817;
+  --purple: #9b5de5;
+  --purple-dark: #5a2f96;
+  --cyan: #3ec9d6;
+  --redstone: #e05a4e;
+
+  --font-display: "Rubik Mono One", "Golos Text", system-ui, sans-serif;
+  --font-body: "Golos Text", system-ui, sans-serif;
+
+  --notch: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+/* -------------------- grain / atmosphere -------------------- */
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* -------------------- notch shape helper -------------------- */
+
+.notched {
+  clip-path: polygon(
+    var(--notch) 0, calc(100% - var(--notch)) 0, 100% var(--notch),
+    100% calc(100% - var(--notch)), calc(100% - var(--notch)) 100%, var(--notch) 100%,
+    0 calc(100% - var(--notch)), 0 var(--notch)
+  );
+}
+
+/* -------------------- shared type -------------------- */
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 3px;
+  background: currentColor;
+}
+.eyebrow--gold { color: var(--gold); }
+.eyebrow--grass { color: var(--grass); }
+.eyebrow--purple { color: var(--purple); }
+.eyebrow--red { color: var(--redstone); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  line-height: 1.25;
+  margin: 0 0 20px;
+  color: var(--text);
+}
+
+.btn {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 28px;
+  border: none;
+  cursor: pointer;
+}
+.btn--primary {
+  background: var(--gold);
+  color: #241800;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  box-shadow: 0 0 0 3px var(--gold-dark) inset, 0 6px 22px rgba(242, 182, 50, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px var(--gold-dark) inset, 0 10px 28px rgba(242, 182, 50, 0.4);
+}
+
+/* -------------------- topbar -------------------- */
+
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(10, 15, 9, 0.72);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.topbar__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topbar__logo {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topbar__logo-block {
+  width: 16px; height: 16px;
+  background: linear-gradient(135deg, var(--grass), var(--grass-dark));
+  box-shadow: inset -3px -3px 0 rgba(0,0,0,0.25), inset 2px 2px 0 rgba(255,255,255,0.15);
+}
+.topbar__nav {
+  display: flex;
+  gap: 28px;
+}
+.topbar__nav a {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--text-dim);
+  transition: color 0.15s ease;
+}
+.topbar__nav a:hover { color: var(--gold); }
+
+/* -------------------- hero -------------------- */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+  filter: saturate(0.95) brightness(0.85);
+  transform: scale(1.06);
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(10,15,9,0.15), rgba(10,15,9,0.72) 65%),
+    linear-gradient(180deg, rgba(10,15,9,0.55) 0%, rgba(10,15,9,0.4) 40%, var(--bg) 100%);
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 780px;
+  padding: 0 24px;
+  animation: rise 0.9s cubic-bezier(.2,.8,.2,1) both;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 9vw, 5.2rem);
+  line-height: 1.05;
+  margin: 0 0 22px;
+  color: var(--text);
+  text-shadow: 0 0 40px rgba(155, 93, 229, 0.45), 0 4px 0 rgba(0,0,0,0.55), 0 2px 18px rgba(0,0,0,0.6);
+  letter-spacing: 0.01em;
+}
+.hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-dim);
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero__scroll-cue {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 22px; height: 34px;
+  border: 2px solid var(--text-faint);
+  border-radius: 12px;
+}
+.hero__scroll-cue span {
+  position: absolute;
+  top: 6px; left: 50%;
+  width: 4px; height: 8px;
+  background: var(--gold);
+  transform: translateX(-50%);
+  animation: scrollcue 1.6s ease-in-out infinite;
+}
+@keyframes scrollcue {
+  0% { opacity: 1; top: 6px; }
+  70% { opacity: 0; top: 16px; }
+  100% { opacity: 0; top: 6px; }
+}
+
+/* -------------------- symbol -------------------- */
+
+.symbol {
+  padding: 120px 28px;
+  background: var(--bg-1);
+  position: relative;
+}
+.symbol__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+.symbol__media { position: relative; }
+.symbol__frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(155, 93, 229, 0.3);
+  padding: 10px;
+  background: var(--panel);
+  cursor: pointer;
+  overflow: hidden;
+}
+.symbol__frame img {
+  width: 100%;
+  filter: saturate(0.95);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+.symbol__frame:hover img {
+  transform: scale(1.05);
+  filter: saturate(0.95) brightness(0.6);
+}
+.symbol__frame .house-card__zoom {
+  font-size: 0.78rem;
+}
+.symbol__glow {
+  position: absolute;
+  inset: -40px;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, rgba(155, 93, 229, 0.35), transparent 70%);
+  filter: blur(10px);
+}
+.symbol__desc {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  margin: 0 0 18px;
+}
+.symbol__desc strong { color: var(--purple); font-weight: 700; }
+
+/* -------------------- houses -------------------- */
+
+.houses {
+  padding: 120px 0 0;
+}
+.houses__head {
+  max-width: 640px;
+  margin: 0 auto 56px;
+  padding: 0 28px;
+  text-align: center;
+}
+.houses__lead {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+}
+
+.house-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.house-card {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.house-card__media-col {
+  position: relative;
+  overflow: hidden;
+  background: var(--panel);
+}
+.house-card__shot--main {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.house-card__shot {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.house-card__shot img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+.house-card__shot:hover img {
+  transform: scale(1.06);
+  filter: brightness(0.6);
+}
+.house-card__zoom {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+.house-card__shot--main:hover .house-card__zoom { opacity: 1; }
+
+.house-card__thumbs {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+}
+.house-card__thumbs .house-card__shot {
+  width: 104px;
+  height: 68px;
+  border: 2px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.house-card__media-col--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(155deg, var(--panel), var(--panel-2));
+}
+.house-card__big-icon {
+  width: 30%;
+  max-width: 180px;
+  opacity: 0.9;
+  filter: drop-shadow(0 12px 30px rgba(0,0,0,0.4));
+}
+.house-card__big-icon svg { width: 100%; height: 100%; }
+
+.house-card--compact {
+  min-height: 0;
+  grid-template-columns: 220px 1fr;
+}
+.house-card--compact .house-card__body {
+  padding: 40px 48px;
+}
+.house-card--compact .house-card__name {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+.house-card--compact .house-card__text {
+  font-size: 0.98rem;
+}
+.house-card--compact .house-card__big-icon {
+  max-width: 84px;
+}
+
+.house-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 60px;
+  border-left: 3px solid var(--tag-color, var(--gold));
+  background: var(--bg-1);
+}
+.house-card__nick {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--tag-color, var(--gold));
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+.house-card__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  margin: 0 0 22px;
+  color: var(--text);
+}
+.house-card__text {
+  color: var(--text-dim);
+  font-size: 1.08rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 46ch;
+}
+
+/* -------------------- hosting -------------------- */
+
+.hosting {
+  padding: 120px 28px 132px;
+  background: var(--bg-1);
+  position: relative;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.hosting__head {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.hosting__panel {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 44px 52px;
+  background: var(--panel);
+  border: 1px solid rgba(224, 90, 78, 0.28);
+  position: relative;
+}
+.hosting__text {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+.hosting__text:last-child { margin-bottom: 0; }
+.hosting__text strong { color: var(--redstone); font-weight: 700; }
+
+/* -------------------- footer -------------------- */
+
+.footer {
+  text-align: center;
+  padding: 48px 28px 56px;
+  background: var(--bg-1);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  color: var(--text-dim);
+}
+.footer p { margin: 0 0 8px; }
+.footer__small {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+/* -------------------- lightbox -------------------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(6, 9, 5, 0.94);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+.lightbox.is-open { display: flex; }
+
+.lightbox__stage {
+  max-width: 1100px;
+  width: 100%;
+  max-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox__stage img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border: 1px solid rgba(255,255,255,0.1);
+  animation: rise 0.35s ease both;
+}
+
+.lightbox__thumbs {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+.lightbox__thumbs img {
+  width: 84px; height: 52px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.5;
+  border: 2px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+.lightbox__thumbs img:hover { opacity: 0.85; }
+.lightbox__thumbs img.is-active {
+  opacity: 1;
+  border-color: var(--gold);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 24px; right: 28px;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--text);
+  width: 40px; height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--text);
+  width: 48px; height: 48px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox__nav--prev { left: 20px; }
+.lightbox__nav--next { right: 20px; }
+.lightbox__nav:hover, .lightbox__close:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* -------------------- responsive -------------------- */
+
+@media (max-width: 760px) {
+  .symbol__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .topbar__nav { gap: 16px; }
+  .topbar__nav a { font-size: 0.78rem; }
+  .lightbox__nav { width: 40px; height: 40px; font-size: 1.3rem; }
+  .lightbox__nav--prev { left: 8px; }
+  .lightbox__nav--next { right: 8px; }
+
+  .house-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .house-card__media-col {
+    height: 62vh;
+  }
+  .house-card__body {
+    padding: 44px 24px;
+    border-left: none;
+    border-top: 3px solid var(--tag-color, var(--gold));
+  }
+  .house-card__thumbs .house-card__shot {
+    width: 76px;
+    height: 50px;
+  }
+  .house-card--compact {
+    grid-template-columns: 1fr;
+  }
+  .house-card--compact .house-card__media-col {
+    height: 120px;
+  }
+  .house-card--compact .house-card__body {
+    padding: 28px 24px;
+  }
+
+  .hosting {
+    padding: 80px 20px 92px;
+  }
+  .hosting__panel {
+    padding: 32px 26px;
+  }
+}
